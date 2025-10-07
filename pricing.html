@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Preços — PulseX</title>
+		<link rel="icon" href="./public/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+	</head>
+<body>
+	<!-- Aquarium Background System -->
+	<div class="aquarium-bg">
+		<div class="bg-layer layer-1"></div>
+		<div class="bg-layer layer-2"></div>
+		<div class="bg-layer layer-3"></div>
+		<div class="floating-elements">
+			<div class="floating-orb orb-1"></div>
+			<div class="floating-orb orb-2"></div>
+			<div class="floating-orb orb-3"></div>
+			<div class="floating-orb orb-4"></div>
+			<div class="floating-orb orb-5"></div>
+			<div class="floating-orb orb-6"></div>
+		</div>
+		<div class="particle-system">
+			<div class="particle"></div>
+			<div class="particle"></div>
+			<div class="particle"></div>
+			<div class="particle"></div>
+			<div class="particle"></div>
+			<div class="particle"></div>
+			<div class="particle"></div>
+			<div class="particle"></div>
+		</div>
+		<div class="depth-overlay"></div>
+	</div>
+
+	<!-- Header Moderno -->
+	<header class="header-modern">
+		<nav class="nav-container">
+			<a href="/" class="logo">PulseX</a>
+			<ul class="nav-menu">
+				<li><a href="./index.html" class="nav-link">Home</a></li>
+				<li><a href="./features.html" class="nav-link">Recursos</a></li>
+				<li><a href="./download.html" class="nav-link">Download</a></li>
+				<li><a href="./pricing.html" class="nav-link active">Preços</a></li>
+				<li><a href="./support.html" class="nav-link">Suporte</a></li>
+			</ul>
+			<div class="nav-right">
+				<a href="./login.html" class="nav-link login-link">Entrar</a>
+				<a href="./download.html" class="btn-download">Baixar agora</a>
+			</div>
+		</nav>
+	</header>
+
+	<main class="page-main">
+		<!-- Hero Pricing -->
+		<section class="pricing-hero">
+			<div class="container">
+				<h1 class="page-title">Planos e Preços</h1>
+				<p class="page-subtitle">Escolha o plano perfeito para suas necessidades</p>
+				
+				<div class="billing-toggle">
+					<button class="billing-btn" data-period="monthly">Mensal</button>
+					<button class="billing-btn active" data-period="yearly">Anual <span class="save-badge">-10%</span></button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Pricing Cards -->
+		<section class="pricing-section">
+			<div class="container">
+				<div class="pricing-grid">
+					<!-- Free Plan -->
+					<div class="pricing-card">
+						<h3 class="plan-name">Free</h3>
+						<div class="plan-price">
+							<span class="price">R$ 0</span>
+							<span class="period">para sempre</span>
+						</div>
+						<ul class="plan-features">
+							<li>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M9 12l2 2 4-4"/>
+								</svg>
+								Limpeza básica
+							</li>
+							<li>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M9 12l2 2 4-4"/>
+								</svg>
+								Otimização manual
+							</li>
+							<li>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M9 12l2 2 4-4"/>
+								</svg>
+								Suporte comunitário
+							</li>
+						</ul>
+						<a href="./download.html" class="btn-plan">Começar Grátis</a>
+					</div>
+
+					<!-- Pro Plan -->
+					<div class="pricing-card featured">
+						<div class="popular-badge">Mais Popular</div>
+						<h3 class="plan-name">Pro</h3>
+						<div class="plan-price">
+							<span class="price yearly-price">R$ 80</span>
+							<span class="price monthly-price" style="display:none;">R$ 9</span>
+							<span class="period yearly-period">/ano</span>
+							<span class="period monthly-period" style="display:none;">/mês</span>
+						</div>
+						<ul class="plan-features">
+							<li>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M9 12l2 2 4-4"/>
+								</svg>
+								Limpeza profunda
+							</li>
+							<li>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M9 12l2 2 4-4"/>
+								</svg>
+								Modo Turbo para jogos
+							</li>
+							<li>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M9 12l2 2 4-4"/>
+								</svg>
+								Atualizações automáticas
+							</li>
+							<li>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M9 12l2 2 4-4"/>
+								</svg>
+								Suporte prioritário
+							</li>
+							<li>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M9 12l2 2 4-4"/>
+								</svg>
+								Backup na nuvem
+							</li>
+						</ul>
+						<a href="./download.html" class="btn-plan btn-primary">Assinar Pro</a>
+					</div>
+
+					<!-- Enterprise Plan -->
+					<div class="pricing-card">
+						<h3 class="plan-name">Enterprise</h3>
+						<div class="plan-price">
+							<span class="price">Sob consulta</span>
+							<span class="period">personalizado</span>
+						</div>
+						<ul class="plan-features">
+							<li>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M9 12l2 2 4-4"/>
+								</svg>
+								Licenças em volume
+							</li>
+							<li>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M9 12l2 2 4-4"/>
+								</svg>
+								Suporte dedicado 24/7
+							</li>
+							<li>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M9 12l2 2 4-4"/>
+								</svg>
+								API personalizada
+							</li>
+							<li>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M9 12l2 2 4-4"/>
+								</svg>
+								Treinamento da equipe
+							</li>
+						</ul>
+						<a href="./support.html" class="btn-plan">Falar com Vendas</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ Pricing -->
+		<section class="pricing-faq">
+			<div class="container">
+				<h2 class="faq-title">Perguntas Frequentes</h2>
+				<div class="faq-grid">
+					<div class="faq-card">
+						<h3>Posso cancelar a qualquer momento?</h3>
+						<p>Sim! Você pode cancelar sua assinatura a qualquer momento sem taxas adicionais.</p>
+					</div>
+					<div class="faq-card">
+						<h3>Há período de teste?</h3>
+						<p>Oferecemos 30 dias de teste gratuito para todos os planos pagos.</p>
+					</div>
+					<div class="faq-card">
+						<h3>O plano Free é realmente gratuito?</h3>
+						<p>Sim! O plano Free é 100% gratuito e sempre será.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- Footer -->
+	<footer class="site-footer">
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer-info">
+					<p>© <span id="year">2025</span> PulseX. Todos os direitos reservados.</p>
+					<p class="footer-subtitle">Otimizador de PC profissional para Windows 10/11</p>
+				</div>
+				<div class="footer-badges">
+					<span class="badge">v1.0.0</span>
+					<span class="badge">Certificado Microsoft</span>
+					<span class="badge">100% Seguro</span>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		// Aquarium Background System
+		function initAquariumSystem() {
+			console.log('🌊 Inicializando sistema aquário...');
+			
+			// Criar partículas dinâmicas
+			createDynamicParticles();
+			
+			// Interatividade com mouse
+			initMouseInteraction();
+		}
+		
+		function createDynamicParticles() {
+			const particleSystem = document.querySelector('.particle-system');
+			if (!particleSystem) return;
+			
+			// Criar partículas adicionais
+			for (let i = 0; i < 8; i++) {
+				const particle = document.createElement('div');
+				particle.className = 'particle';
+				particle.style.left = Math.random() * 100 + '%';
+				particle.style.animationDelay = Math.random() * 12 + 's';
+				particle.style.animationDuration = (8 + Math.random() * 8) + 's';
+				particle.style.opacity = Math.random() * 0.8 + 0.2;
+				particle.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+				particleSystem.appendChild(particle);
+			}
+		}
+		
+		function initMouseInteraction() {
+			const aquarium = document.querySelector('.aquarium-bg');
+			if (!aquarium) return;
+			
+			let mouseX = 0, mouseY = 0;
+			let targetX = 0, targetY = 0;
+			
+			document.addEventListener('mousemove', (e) => {
+				mouseX = e.clientX;
+				mouseY = e.clientY;
+				
+				// Calcular movimento baseado na posição do mouse
+				targetX = (mouseX / window.innerWidth - 0.5) * 15;
+				targetY = (mouseY / window.innerHeight - 0.5) * 15;
+			});
+			
+			// Animar movimento suave
+			function animateMouse() {
+				const orbs = document.querySelectorAll('.floating-orb');
+				orbs.forEach((orb, index) => {
+					const speed = (index + 1) * 0.015;
+					const currentX = parseFloat(orb.style.transform?.match(/translateX\(([^)]+)\)/) || [0, 0])[1] || 0;
+					const currentY = parseFloat(orb.style.transform?.match(/translateY\(([^)]+)\)/) || [0, 0])[1] || 0;
+					
+					const newX = currentX + (targetX * speed - currentX) * 0.1;
+					const newY = currentY + (targetY * speed - currentY) * 0.1;
+					
+					orb.style.transform = `translate(${newX}px, ${newY}px)`;
+				});
+				
+				requestAnimationFrame(animateMouse);
+			}
+			
+			animateMouse();
+		}
+		
+		// Inicializar sistema aquário
+			document.addEventListener('DOMContentLoaded', function() {
+				initAquariumSystem();
+			});
+		
+		document.getElementById('year').textContent = new Date().getFullYear();
+		
+		// Toggle billing period
+		const billingBtns = document.querySelectorAll('.billing-btn');
+		const yearlyPrices = document.querySelectorAll('.yearly-price');
+		const monthlyPrices = document.querySelectorAll('.monthly-price');
+		const yearlyPeriods = document.querySelectorAll('.yearly-period');
+		const monthlyPeriods = document.querySelectorAll('.monthly-period');
+		
+		billingBtns.forEach(btn => {
+			btn.addEventListener('click', function() {
+				billingBtns.forEach(b => b.classList.remove('active'));
+				this.classList.add('active');
+				
+				const period = this.dataset.period;
+				
+				if (period === 'yearly') {
+					yearlyPrices.forEach(el => el.style.display = 'inline');
+					monthlyPrices.forEach(el => el.style.display = 'none');
+					yearlyPeriods.forEach(el => el.style.display = 'inline');
+					monthlyPeriods.forEach(el => el.style.display = 'none');
+				} else {
+					yearlyPrices.forEach(el => el.style.display = 'none');
+					monthlyPrices.forEach(el => el.style.display = 'inline');
+					yearlyPeriods.forEach(el => el.style.display = 'none');
+					monthlyPeriods.forEach(el => el.style.display = 'inline');
+				}
+			});
+		});
+	</script>
+
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: 'Inter', system-ui, sans-serif;
+			background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+			color: #ffffff;
+			min-height: 100vh;
+		}
+
+		/* Aquarium Background System */
+		.aquarium-bg {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			overflow: hidden;
+		}
+		
+		.bg-layer {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0.6;
+		}
+		
+		.layer-1 {
+			background: radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.3) 0%, transparent 50%),
+						radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.2) 0%, transparent 50%),
+						linear-gradient(135deg, rgba(30, 27, 75, 0.8) 0%, rgba(49, 46, 129, 0.6) 100%);
+			animation: layerFloat1 20s ease-in-out infinite;
+		}
+		
+		.layer-2 {
+			background: radial-gradient(circle at 60% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 40%),
+						radial-gradient(circle at 30% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 60%);
+			animation: layerFloat2 25s ease-in-out infinite reverse;
+			opacity: 0.4;
+		}
+		
+		.layer-3 {
+			background: radial-gradient(circle at 70% 40%, rgba(236, 72, 153, 0.1) 0%, transparent 30%),
+						radial-gradient(circle at 40% 60%, rgba(168, 85, 247, 0.2) 0%, transparent 50%);
+			animation: layerFloat3 30s ease-in-out infinite;
+			opacity: 0.3;
+		}
+		
+		.floating-elements {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+		}
+		
+		.floating-orb {
+			position: absolute;
+			border-radius: 50%;
+			filter: blur(1px);
+			opacity: 0.7;
+		}
+		
+		.orb-1 {
+			width: 120px;
+			height: 120px;
+			background: radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, rgba(168, 85, 247, 0.1) 70%, transparent 100%);
+			top: 10%;
+			left: 15%;
+			animation: orbFloat1 15s ease-in-out infinite;
+		}
+		
+		.orb-2 {
+			width: 80px;
+			height: 80px;
+			background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, rgba(236, 72, 153, 0.1) 70%, transparent 100%);
+			top: 60%;
+			left: 80%;
+			animation: orbFloat2 18s ease-in-out infinite;
+		}
+		
+		.orb-3 {
+			width: 100px;
+			height: 100px;
+			background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.1) 70%, transparent 100%);
+			top: 30%;
+			left: 70%;
+			animation: orbFloat3 22s ease-in-out infinite;
+		}
+		
+		.orb-4 {
+			width: 60px;
+			height: 60px;
+			background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(139, 92, 246, 0.1) 70%, transparent 100%);
+			top: 80%;
+			left: 20%;
+			animation: orbFloat4 16s ease-in-out infinite;
+		}
+		
+		.orb-5 {
+			width: 90px;
+			height: 90px;
+			background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, rgba(168, 85, 247, 0.05) 70%, transparent 100%);
+			top: 40%;
+			left: 10%;
+			animation: orbFloat5 20s ease-in-out infinite;
+		}
+		
+		.orb-6 {
+			width: 70px;
+			height: 70px;
+			background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, rgba(236, 72, 153, 0.05) 70%, transparent 100%);
+			top: 70%;
+			left: 60%;
+			animation: orbFloat6 17s ease-in-out infinite;
+		}
+		
+		.particle-system {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+		}
+		
+		.particle {
+			position: absolute;
+			width: 4px;
+			height: 4px;
+			background: rgba(255, 255, 255, 0.6);
+			border-radius: 50%;
+			animation: particleFloat 12s linear infinite;
+		}
+		
+		.particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+		.particle:nth-child(2) { left: 20%; animation-delay: 2s; }
+		.particle:nth-child(3) { left: 30%; animation-delay: 4s; }
+		.particle:nth-child(4) { left: 40%; animation-delay: 6s; }
+		.particle:nth-child(5) { left: 50%; animation-delay: 8s; }
+		.particle:nth-child(6) { left: 60%; animation-delay: 10s; }
+		.particle:nth-child(7) { left: 70%; animation-delay: 1s; }
+		.particle:nth-child(8) { left: 80%; animation-delay: 3s; }
+		
+		.depth-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(180deg, 
+				rgba(0, 0, 0, 0.1) 0%, 
+				transparent 20%, 
+				transparent 80%, 
+				rgba(0, 0, 0, 0.2) 100%);
+			pointer-events: none;
+		}
+		
+		/* Animations */
+		@keyframes layerFloat1 {
+			0%, 100% { transform: translate(0, 0) scale(1); }
+			25% { transform: translate(20px, -15px) scale(1.05); }
+			50% { transform: translate(-10px, 10px) scale(0.95); }
+			75% { transform: translate(15px, 5px) scale(1.02); }
+		}
+		
+		@keyframes layerFloat2 {
+			0%, 100% { transform: translate(0, 0) scale(1); }
+			33% { transform: translate(-15px, 20px) scale(1.03); }
+			66% { transform: translate(10px, -10px) scale(0.97); }
+		}
+		
+		@keyframes layerFloat3 {
+			0%, 100% { transform: translate(0, 0) scale(1); }
+			50% { transform: translate(25px, -20px) scale(1.08); }
+		}
+		
+		@keyframes orbFloat1 {
+			0%, 100% { transform: translate(0, 0) rotate(0deg); }
+			25% { transform: translate(30px, -20px) rotate(90deg); }
+			50% { transform: translate(-20px, 15px) rotate(180deg); }
+			75% { transform: translate(25px, 10px) rotate(270deg); }
+		}
+		
+		@keyframes orbFloat2 {
+			0%, 100% { transform: translate(0, 0) rotate(0deg); }
+			33% { transform: translate(-25px, 30px) rotate(120deg); }
+			66% { transform: translate(20px, -15px) rotate(240deg); }
+		}
+		
+		@keyframes orbFloat3 {
+			0%, 100% { transform: translate(0, 0) rotate(0deg); }
+			50% { transform: translate(35px, -25px) rotate(180deg); }
+		}
+		
+		@keyframes orbFloat4 {
+			0%, 100% { transform: translate(0, 0) rotate(0deg); }
+			25% { transform: translate(-30px, 20px) rotate(90deg); }
+			50% { transform: translate(15px, -25px) rotate(180deg); }
+			75% { transform: translate(-20px, 15px) rotate(270deg); }
+		}
+		
+		@keyframes orbFloat5 {
+			0%, 100% { transform: translate(0, 0) rotate(0deg); }
+			40% { transform: translate(25px, 30px) rotate(144deg); }
+			80% { transform: translate(-15px, -20px) rotate(288deg); }
+		}
+		
+		@keyframes orbFloat6 {
+			0%, 100% { transform: translate(0, 0) rotate(0deg); }
+			30% { transform: translate(-20px, 25px) rotate(108deg); }
+			60% { transform: translate(30px, -15px) rotate(216deg); }
+			90% { transform: translate(-10px, 20px) rotate(324deg); }
+		}
+		
+		@keyframes particleFloat {
+			0% { 
+				transform: translateY(100vh) translateX(0px);
+				opacity: 0;
+			}
+			10% { 
+				opacity: 1;
+			}
+			90% { 
+				opacity: 1;
+			}
+			100% { 
+				transform: translateY(-100px) translateX(50px);
+				opacity: 0;
+			}
+		}
+
+		.header-modern {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 1000;
+			background: rgba(30, 27, 75, 0.85);
+			backdrop-filter: blur(20px);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.nav-container {
+			max-width: 1400px;
+			margin: 0 auto;
+			padding: 1rem 2rem;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.logo {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: #ffffff;
+			text-decoration: none;
+		}
+
+		.nav-menu {
+			display: flex;
+			list-style: none;
+			gap: 2rem;
+		}
+
+		.nav-link {
+			color: rgba(255, 255, 255, 0.8);
+			text-decoration: none;
+			font-weight: 500;
+			transition: all 0.3s ease;
+			position: relative;
+		}
+
+		.nav-link::after {
+			content: '';
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: linear-gradient(90deg, #a855f7, #ec4899);
+			transition: width 0.3s ease;
+		}
+
+		.nav-link:hover,
+		.nav-link.active {
+			color: #ffffff;
+		}
+
+		.nav-link:hover::after,
+		.nav-link.active::after {
+			width: 100%;
+		}
+		
+		.login-link {
+			background: rgba(255, 255, 255, 0.1);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			padding: 0.5rem 1rem;
+			border-radius: 20px;
+			margin-right: 1rem;
+			transition: all 0.3s ease;
+		}
+		
+		.login-link:hover {
+			background: rgba(168, 85, 247, 0.2);
+			border-color: rgba(168, 85, 247, 0.4);
+			transform: translateY(-2px);
+		}
+		
+		.login-link::after {
+			display: none;
+		}
+
+		.btn-download {
+			background: linear-gradient(135deg, #a855f7, #ec4899);
+			color: #ffffff;
+			padding: 0.75rem 1.5rem;
+			border-radius: 50px;
+			text-decoration: none;
+			font-weight: 600;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+		}
+
+		.page-main {
+			padding-top: 5rem;
+		}
+
+		.pricing-hero {
+			background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%);
+			padding: 5rem 2rem 3rem;
+			text-align: center;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 2rem;
+		}
+
+		.page-title {
+			font-size: clamp(2rem, 5vw, 3rem);
+			font-weight: 700;
+			margin-bottom: 1rem;
+		}
+
+		.page-subtitle {
+			font-size: 1.25rem;
+			color: rgba(255, 255, 255, 0.8);
+			margin-bottom: 3rem;
+		}
+
+		.billing-toggle {
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+		}
+
+		.billing-btn {
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			color: rgba(255, 255, 255, 0.8);
+			padding: 0.75rem 2rem;
+			border-radius: 50px;
+			font-size: 1rem;
+			font-weight: 600;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.billing-btn.active {
+			background: linear-gradient(135deg, #a855f7, #ec4899);
+			border-color: transparent;
+			color: #ffffff;
+		}
+
+		.save-badge {
+			background: rgba(74, 222, 128, 0.2);
+			color: #4ade80;
+			padding: 0.25rem 0.5rem;
+			border-radius: 20px;
+			font-size: 0.75rem;
+			margin-left: 0.5rem;
+		}
+
+		.pricing-section {
+			background: #1e1b4b;
+			padding: 5rem 2rem;
+		}
+
+		.pricing-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+			max-width: 1100px;
+			margin: 0 auto;
+		}
+
+		.pricing-card {
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: 24px;
+			padding: 3rem 2rem;
+			transition: all 0.3s ease;
+			position: relative;
+		}
+
+		.pricing-card.featured {
+			background: rgba(168, 85, 247, 0.1);
+			border-color: rgba(168, 85, 247, 0.4);
+			transform: scale(1.05);
+		}
+
+		.pricing-card:hover {
+			transform: translateY(-10px);
+			border-color: rgba(168, 85, 247, 0.4);
+			box-shadow: 0 25px 60px rgba(168, 85, 247, 0.25);
+		}
+
+		.pricing-card.featured:hover {
+			transform: translateY(-10px) scale(1.05);
+		}
+
+		.popular-badge {
+			position: absolute;
+			top: -12px;
+			left: 50%;
+			transform: translateX(-50%);
+			background: linear-gradient(135deg, #a855f7, #ec4899);
+			color: #ffffff;
+			padding: 0.4rem 1.2rem;
+			border-radius: 50px;
+			font-size: 0.8rem;
+			font-weight: 700;
+		}
+
+		.plan-name {
+			font-size: 1.5rem;
+			font-weight: 700;
+			margin-bottom: 1rem;
+		}
+
+		.plan-price {
+			margin-bottom: 2rem;
+		}
+
+		.price {
+			display: block;
+			font-size: 3rem;
+			font-weight: 700;
+			color: #ffffff;
+			line-height: 1;
+		}
+
+		.period {
+			font-size: 1rem;
+			color: rgba(255, 255, 255, 0.6);
+		}
+
+		.plan-features {
+			list-style: none;
+			margin: 2rem 0;
+		}
+
+		.plan-features li {
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+			padding: 0.75rem 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.plan-features li svg {
+			stroke: #4ade80;
+			flex-shrink: 0;
+		}
+
+		.btn-plan {
+			background: rgba(255, 255, 255, 0.1);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			color: #ffffff;
+			padding: 1rem 2rem;
+			border-radius: 50px;
+			text-decoration: none;
+			font-weight: 600;
+			display: block;
+			text-align: center;
+			transition: all 0.3s ease;
+		}
+
+		.btn-plan.btn-primary {
+			background: linear-gradient(135deg, #a855f7, #ec4899);
+			border-color: transparent;
+			box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+		}
+
+		.btn-plan:hover {
+			transform: translateY(-3px);
+		}
+
+		.pricing-faq {
+			background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%);
+			padding: 5rem 2rem;
+		}
+
+		.faq-title {
+			text-align: center;
+			font-size: 2rem;
+			margin-bottom: 3rem;
+		}
+
+		.faq-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+		}
+
+		.faq-card {
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: 16px;
+			padding: 2rem;
+		}
+
+		.faq-card h3 {
+			font-size: 1.1rem;
+			margin-bottom: 0.75rem;
+		}
+
+		.faq-card p {
+			color: rgba(255, 255, 255, 0.8);
+			line-height: 1.6;
+		}
+
+		.site-footer {
+			background: rgba(15, 15, 26, 0.95);
+			border-top: 1px solid rgba(255, 255, 255, 0.1);
+			padding: 3rem 2rem;
+		}
+
+		.footer-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 2rem;
+		}
+
+		.footer-info p {
+			color: rgba(255, 255, 255, 0.7);
+			margin: 0.25rem 0;
+		}
+
+		.footer-subtitle {
+			font-size: 0.9rem;
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		.footer-badges {
+			display: flex;
+			gap: 0.75rem;
+		}
+
+		.badge {
+			background: rgba(255, 255, 255, 0.1);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			padding: 0.5rem 1rem;
+			border-radius: 50px;
+			font-size: 0.85rem;
+		}
+
+		@media (max-width: 768px) {
+			.nav-menu {
+				display: none;
+			}
+
+			.pricing-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.pricing-card.featured {
+				transform: scale(1);
+			}
+
+			.pricing-card.featured:hover {
+				transform: translateY(-10px) scale(1);
+			}
+
+			.billing-toggle {
+				flex-direction: column;
+			}
+		}
+	</style>
+		<!-- Mascot Wanderer Script -->
+		<script src="mascot-wanderer.js"></script>
+	</body>
+</html>

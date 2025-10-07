@@ -1,0 +1,374 @@
+/* ========================================
+   GLASSMORPHISM + NEON GRADIENTS SYSTEM
+   ======================================== */
+
+:root {
+  /* Cores neon futurísticas */
+  --neon-purple: #A855F7;
+  --neon-cyan: #38BDF8;
+  --neon-blue: #3B82F6;
+  --neon-pink: #EC4899;
+  --neon-green: #10B981;
+  
+  /* Gradientes neon */
+  --gradient-primary: linear-gradient(135deg, var(--neon-purple) 0%, var(--neon-blue) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-purple) 100%);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --glass-blur: blur(16px);
+  
+  /* Dark mode glass */
+  --glass-bg-dark: rgba(15, 15, 26, 0.8);
+  --glass-border-dark: rgba(255, 255, 255, 0.08);
+  --glass-shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] {
+  --glass-bg: var(--glass-bg-dark);
+  --glass-border: var(--glass-border-dark);
+  --glass-shadow: var(--glass-shadow-dark);
+}
+
+/* ========================================
+   COMPONENTES GLASSMORPHISM
+   ======================================== */
+
+/* Cards com efeito glass */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(168, 85, 247, 0.2);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+/* Botões glassmorphism */
+.glass-btn {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 12px 24px;
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  opacity: 0.1;
+  transition: left 0.5s ease;
+}
+
+.glass-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
+  border-color: var(--neon-purple);
+}
+
+.glass-btn:hover::before {
+  left: 0;
+}
+
+/* CTA pulsante */
+.pulse-cta {
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+  position: relative;
+}
+
+.pulse-cta::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--gradient-primary);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  animation: pulseRing 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% { 
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  }
+  100% { 
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.6), 0 0 60px rgba(168, 85, 247, 0.3);
+  }
+}
+
+@keyframes pulseRing {
+  0% { 
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% { 
+    opacity: 0.3;
+  }
+  100% { 
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+/* Menu glassmorphism */
+.glass-navbar {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Hero com gradiente neon */
+.neon-hero {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+  animation: heroGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+  0% { 
+    filter: brightness(1) saturate(1);
+  }
+  100% { 
+    filter: brightness(1.1) saturate(1.2);
+  }
+}
+
+/* Partículas neon */
+.neon-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--neon-purple);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--neon-purple);
+  animation: float 6s ease-in-out infinite;
+}
+
+.neon-particle:nth-child(2n) {
+  background: var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+  animation-delay: -2s;
+}
+
+.neon-particle:nth-child(3n) {
+  background: var(--neon-pink);
+  box-shadow: 0 0 10px var(--neon-pink);
+  animation-delay: -4s;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.7;
+  }
+  50% { 
+    transform: translateY(-20px) translateX(10px);
+    opacity: 1;
+  }
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Contadores animados */
+.counter {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Loading shimmer */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Progress bar neon */
+.neon-progress {
+  height: 8px;
+  background: var(--glass-bg);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.neon-progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: inherit;
+  animation: progressGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes progressGlow {
+  0% { 
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+  }
+  100% { 
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+  }
+}
+
+/* Feature stats styling */
+.feature-stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.feature-stats .stat {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--neon-purple);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
+}
+
+.feature-stats .stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.3);
+  border-color: var(--neon-purple);
+}
+
+[data-theme="dark"] .feature-stats .stat {
+  color: var(--neon-cyan);
+}
+
+[data-theme="dark"] .feature-stats .stat:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+}
+
+/* Enhanced card styling */
+.glass-card .card-header h3 {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.glass-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+.glass-card p strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .glass-card {
+    border-radius: 16px;
+  }
+  
+  .glass-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .pulse-cta::after {
+    display: none; /* Remove animação em mobile para performance */
+  }
+  
+  .feature-stats {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .feature-stats .stat {
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}

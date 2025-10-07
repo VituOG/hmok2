@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap');
+
+:root {
+	/* Apple-like light theme */
+	--bg: #f5f5f7;
+	--surface: #ffffff;
+	--primary: #0071e3; /* Apple blue CTA */
+	--primary-600: #0060c7;
+	--accent: #06c; /* Link blue */
+	--text: #1d1d1f;
+	--muted: #6e6e73;
+	--ok: #34c759;
+	--warn: #ffd60a;
+	--danger: #ff3b30;
+	--radius: 16px;
+}
+
+:root {
+	--shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+	--shadow-md: 0 8px 24px rgba(0,0,0,0.35);
+	--shadow-lg: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+:root {
+	--container-max: 1200px;
+}
+
+/* Tema Escuro */
+[data-theme="dark"] {
+	--bg: #1a1a1a;
+	--surface: #2d2d2d;
+	--text: #ffffff;
+	--muted: #a1a1a6;
+	--primary: #0a84ff;
+	--primary-600: #0051a3;
+	--accent: #0a84ff;
+	--shadow-sm: 0 1px 2px rgba(255,255,255,0.1);
+	--shadow-md: 0 8px 24px rgba(255,255,255,0.1);
+	--shadow-lg: 0 12px 40px rgba(255,255,255,0.1);
+}
+
+html {
+	font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', Segoe UI, Roboto, Inter, 'Helvetica Neue', Arial, system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+	font-family: Sora, Inter, ui-sans-serif, system-ui, sans-serif;
+}
