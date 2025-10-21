@@ -1,54 +1,75 @@
-// Mascot Wanderer System - PulseCat
+// Mascot Wanderer System - PulseCat (Optimized)
 class MascotWanderer {
     constructor() {
         this.mascot = null;
-        this.currentPosition = 'bottom-left';
+        this.currentPosition = 'bottom-right';
         this.isVisible = false;
         this.curiosityIndex = 0;
         this.wanderInterval = null;
         this.curiosityInterval = null;
-        this.positions = [
-            'bottom-left', 'bottom-right', 'top-left', 'top-right',
-            'center-left', 'center-right', 'middle-top', 'middle-bottom'
-        ];
+        
+        // Performance optimizations
+        this.performanceConfig = {
+            wanderDelay: 15000, // 15s
+            curiosityDelay: 20000, // 20s
+            animationDuration: 300,
+            debounceDelay: 150
+        };
+        
+        // Throttled functions
+        this.throttledWander = this.throttle(this.wander.bind(this), this.performanceConfig.debounceDelay);
+        this.throttledShowCuriosity = this.throttle(this.showCuriosity.bind(this), this.performanceConfig.debounceDelay);
+        // Smart positioning based on page context
+        this.positions = {
+            'safe': ['bottom-right', 'bottom-left', 'top-right', 'top-left'],
+            'reading': ['bottom-right', 'bottom-left'],
+            'interactive': ['center-right', 'center-left'],
+            'mobile': ['bottom-right', 'bottom-left']
+        };
+        
+        this.currentContext = 'safe';
+        this.userInteraction = false;
+        this.lastInteraction = 0;
+        this.discreteMode = false;
+        this.scrollPosition = 0;
         
         this.curiosities = [
-            "💡 Sabia que limpar arquivos temporários pode liberar até 2GB de espaço?",
-            "⚡ Desfragmentar o disco pode acelerar o Windows em até 30%!",
-            "🛡️ O Windows Defender é gratuito e muito eficaz contra vírus!",
-            "🧹 O cache do navegador pode ocupar vários GB sem você saber!",
-            "🚀 Desabilitar programas de inicialização acelera o boot em 50%!",
-            "💾 Um SSD é 10x mais rápido que um HD tradicional!",
-            "🔧 Atualizar drivers pode resolver problemas de performance!",
-            "📊 O Task Manager mostra quais programas consomem mais RAM!",
-            "🌐 Limpar o DNS pode resolver problemas de conexão!",
-            "⚙️ O Windows tem ferramentas nativas de otimização!",
-            "🎯 Desabilitar efeitos visuais libera recursos do sistema!",
-            "💻 Reiniciar o PC resolve 90% dos problemas temporários!",
-            "🔍 O Windows Search Indexer pode ser otimizado!",
-            "📱 Aplicativos em segundo plano consomem bateria e RAM!",
-            "🎨 Temas escuros economizam energia em telas OLED!",
-            "🔄 O Windows Update pode melhorar a performance!",
+            "💡 Sabia que limpar cache pode liberar até 3GB de espaço no Android?",
+            "⚡ Fechar apps em background pode acelerar seu celular em até 40%!",
+            "🛡️ O Google Play Protect protege contra malware automaticamente!",
+            "🧹 O cache do WhatsApp pode ocupar vários GB sem você saber!",
+            "🚀 Desabilitar apps de inicialização acelera o boot em 60%!",
+            "💾 Limpar downloads antigos libera muito espaço!",
+            "🔧 Atualizar apps pode resolver problemas de performance!",
+            "📊 O Gerenciador de Apps mostra quais apps consomem mais RAM!",
+            "🌐 Limpar dados de navegação resolve problemas de conexão!",
+            "⚙️ O Android tem otimizações automáticas de bateria!",
+            "🎯 Desabilitar animações libera recursos do sistema!",
+            "📱 Reiniciar o celular resolve 90% dos problemas temporários!",
+            "🔍 O Google pode ser otimizado para usar menos dados!",
+            "📱 Apps em segundo plano consomem bateria e RAM!",
+            "🎨 Modo escuro economiza bateria em telas OLED!",
+            "🔄 Atualizar o Android pode melhorar a performance!",
             "📈 Monitorar a temperatura evita throttling do processador!",
-            "🎮 Modo Jogo do Windows otimiza recursos para games!",
+            "🎮 Modo Jogo do Android otimiza recursos para games!",
             "🔐 Antivírus em tempo real pode impactar a performance!",
-            "💡 O Windows 11 tem otimizações automáticas de energia!"
+            "💡 O Android 12+ tem otimizações automáticas de energia!"
         ];
         
         this.pageCuriosities = {
             'index': [
                 "🏠 Esta é a página principal do PulseX!",
-                "✨ Aqui você encontra tudo sobre otimização!",
-                "🚀 Bem-vindo ao futuro da performance!"
+                "✨ Aqui você encontra tudo sobre otimização de Android!",
+                "🚀 Bem-vindo ao futuro da performance mobile!"
             ],
             'features': [
                 "🔧 Aqui estão todos os recursos do PulseX!",
-                "⚡ Cada recurso foi pensado para máxima eficiência!",
+                "⚡ Cada recurso foi pensado para máxima eficiência no Android!",
                 "🛡️ Proteção e performance em um só lugar!"
             ],
             'download': [
-                "📥 Baixe a versão mais recente aqui!",
-                "💾 O download é rápido e seguro!",
+                "📥 Baixe na Play Store aqui!",
+                "📱 O download é rápido e seguro!",
                 "🎯 Instalação em menos de 2 minutos!"
             ],
             'pricing': [
@@ -70,6 +91,147 @@ class MascotWanderer {
         
         this.init();
     }
+
+    // Performance utilities
+    throttle(func, delay) {
+        let lastCall = 0;
+        return (...args) => {
+            const now = Date.now();
+            if (now - lastCall >= delay) {
+                lastCall = now;
+                func(...args);
+            }
+        };
+    }
+
+    debounce(func, delay) {
+        let timeoutId;
+        return (...args) => {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => func(...args), delay);
+        };
+    }
+
+    // Performance monitoring
+    startTimer(name) {
+        const start = performance.now();
+        return () => {
+            const duration = performance.now() - start;
+            if (duration > 100) {
+                console.warn(`Slow mascot operation: ${name} took ${duration.toFixed(2)}ms`);
+            }
+        };
+    }
+
+    // Smart context detection
+    detectPageContext() {
+        const path = window.location.pathname;
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) return 'mobile';
+        
+        if (path.includes('features') || path.includes('pricing')) {
+            return 'reading'; // Pages with lots of text
+        }
+        
+        if (path.includes('download') || path.includes('login')) {
+            return 'interactive'; // Pages with forms/buttons
+        }
+        
+        return 'safe'; // Default safe positioning
+    }
+
+    // User interaction detection
+    detectUserActivity() {
+        const now = Date.now();
+        const timeSinceInteraction = now - this.lastInteraction;
+        
+        // If user is actively interacting, be less intrusive
+        if (timeSinceInteraction < 30000) { // 30 seconds
+            this.userInteraction = true;
+            return true;
+        }
+        
+        this.userInteraction = false;
+        return false;
+    }
+
+    // Smart positioning logic
+    getSmartPosition() {
+        const context = this.detectPageContext();
+        const isUserActive = this.detectUserActivity();
+        
+        this.currentContext = context;
+        let availablePositions = this.positions[context];
+        
+        // Check for safe zones (avoid important elements)
+        availablePositions = this.filterSafePositions(availablePositions);
+        
+        // If user is active, prefer less intrusive positions
+        if (isUserActive) {
+            const nonIntrusivePositions = availablePositions.filter(pos => 
+                !pos.includes('center') && !pos.includes('middle')
+            );
+            return nonIntrusivePositions.length > 0 ? nonIntrusivePositions : availablePositions;
+        }
+        
+        return availablePositions;
+    }
+
+    // Check for safe zones to avoid important elements
+    filterSafePositions(positions) {
+        const safePositions = [];
+        
+        positions.forEach(position => {
+            if (this.isPositionSafe(position)) {
+                safePositions.push(position);
+            }
+        });
+        
+        return safePositions.length > 0 ? safePositions : positions;
+    }
+
+    // Check if a position is safe (not overlapping important elements)
+    isPositionSafe(position) {
+        // Get important elements that mascot should avoid
+        const importantElements = document.querySelectorAll(
+            'button, input, form, .cta, .download-btn, .hero, .navbar, .footer'
+        );
+        
+        // Create a temporary element to check position
+        const testElement = document.createElement('div');
+        testElement.style.position = 'fixed';
+        testElement.style.width = '100px';
+        testElement.style.height = '100px';
+        testElement.style.pointerEvents = 'none';
+        testElement.style.zIndex = '-1';
+        
+        // Apply position class
+        testElement.classList.add(position);
+        document.body.appendChild(testElement);
+        
+        const testRect = testElement.getBoundingClientRect();
+        
+        // Check for overlaps with important elements
+        let isSafe = true;
+        importantElements.forEach(element => {
+            const elementRect = element.getBoundingClientRect();
+            if (this.rectsOverlap(testRect, elementRect)) {
+                isSafe = false;
+            }
+        });
+        
+        document.body.removeChild(testElement);
+        return isSafe;
+    }
+
+    // Check if two rectangles overlap
+    rectsOverlap(rect1, rect2) {
+        return !(rect1.right < rect2.left || 
+                rect1.left > rect2.right || 
+                rect1.bottom < rect2.top || 
+                rect1.top > rect2.bottom);
+    }
     
     init() {
         // Wait for DOM to be ready
@@ -81,6 +243,8 @@ class MascotWanderer {
     }
     
     createMascot() {
+        const timer = this.startTimer('createMascot');
+        
         // Remove existing mascot if any
         const existingMascot = document.getElementById('mascot');
         if (existingMascot) {
@@ -186,6 +350,8 @@ class MascotWanderer {
                     opacity: 0;
                     transform: translateY(20px) scale(0.8);
                     animation: mascotAppear 1.5s ease-out 1s forwards;
+                    will-change: transform, opacity;
+                    transform: translateZ(0);
                 }
                 
                 .mascot-wanderer:hover {
@@ -197,6 +363,15 @@ class MascotWanderer {
                         opacity: 1;
                         transform: translateY(0) scale(1);
                     }
+                }
+                
+                /* Performance optimizations */
+                .mascot-wanderer * {
+                    will-change: transform;
+                }
+                
+                .mascot-wanderer:hover * {
+                    will-change: transform;
                 }
                 
                 /* Position classes */
@@ -805,36 +980,128 @@ class MascotWanderer {
         // Hover effects
         this.mascot.addEventListener('mouseenter', () => this.handleHover());
         this.mascot.addEventListener('mouseleave', () => this.handleHoverLeave());
+        
+        // User interaction detection
+        this.addUserInteractionListeners();
+    }
+
+    addUserInteractionListeners() {
+        // Track user interactions to be less intrusive
+        const interactionEvents = ['click', 'keydown', 'mousemove', 'touchstart'];
+        
+        interactionEvents.forEach(event => {
+            document.addEventListener(event, () => {
+                this.lastInteraction = Date.now();
+                this.userInteraction = true;
+                
+                // If user is actively interacting, reduce mascot activity
+                if (this.detectUserActivity()) {
+                    this.reduceActivity();
+                }
+            }, { passive: true });
+        });
+        
+        // Special handling for scroll events
+        let scrollTimeout;
+        document.addEventListener('scroll', () => {
+            this.lastInteraction = Date.now();
+            this.userInteraction = true;
+            
+            // Activate discrete mode during scrolling
+            this.activateDiscreteMode();
+            
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                this.deactivateDiscreteMode();
+            }, 2000);
+        }, { passive: true });
+        
+        // Reset interaction flag after inactivity
+        setInterval(() => {
+            if (!this.detectUserActivity()) {
+                this.resumeNormalActivity();
+            }
+        }, 5000);
+    }
+
+    activateDiscreteMode() {
+        this.discreteMode = true;
+        if (this.mascot) {
+            this.mascot.style.opacity = '0.3';
+            this.mascot.style.pointerEvents = 'none';
+        }
+    }
+
+    deactivateDiscreteMode() {
+        this.discreteMode = false;
+        if (this.mascot) {
+            this.mascot.style.opacity = '1';
+            this.mascot.style.pointerEvents = 'auto';
+        }
+    }
+
+    reduceActivity() {
+        // Reduce wandering frequency when user is active
+        if (this.wanderInterval) {
+            clearInterval(this.wanderInterval);
+            this.wanderInterval = setInterval(() => {
+                this.throttledWander();
+            }, this.performanceConfig.wanderDelay * 2); // Double the delay
+        }
+    }
+
+    resumeNormalActivity() {
+        // Resume normal activity when user is inactive
+        if (this.wanderInterval) {
+            clearInterval(this.wanderInterval);
+            this.wanderInterval = setInterval(() => {
+                this.throttledWander();
+            }, this.performanceConfig.wanderDelay);
+        }
     }
     
     setRandomPosition() {
         if (!this.mascot) return;
         
         // Remove current position class
-        this.positions.forEach(pos => {
+        const allPositions = Object.values(this.positions).flat();
+        allPositions.forEach(pos => {
             this.mascot.classList.remove(pos);
         });
         
-        // Set new random position
-        const newPosition = this.positions[Math.floor(Math.random() * this.positions.length)];
+        // Get smart position based on context
+        const availablePositions = this.getSmartPosition();
+        const newPosition = availablePositions[Math.floor(Math.random() * availablePositions.length)];
+        
         this.mascot.classList.add(newPosition);
         this.currentPosition = newPosition;
     }
     
     startWandering() {
-        // Wander every 15-30 seconds
+        // Wander with optimized intervals
         this.wanderInterval = setInterval(() => {
-            this.wander();
-        }, 15000 + Math.random() * 15000);
+            this.throttledWander();
+        }, this.performanceConfig.wanderDelay + Math.random() * 5000);
         
-        // Show curiosities every 20-40 seconds
+        // Show curiosities with optimized intervals
         this.curiosityInterval = setInterval(() => {
-            this.showRandomCuriosity();
-        }, 20000 + Math.random() * 20000);
+            this.throttledShowCuriosity();
+        }, this.performanceConfig.curiosityDelay + Math.random() * 5000);
+        
+        // Memory cleanup every 5 minutes
+        setInterval(() => {
+            this.optimizeMemory();
+        }, 300000);
     }
     
     wander() {
+        const timer = this.startTimer('wander');
         if (!this.mascot) return;
+        
+        // Don't wander if in discrete mode
+        if (this.discreteMode) {
+            return;
+        }
         
         // Fade out
         this.mascot.style.opacity = '0';
@@ -852,10 +1119,22 @@ class MascotWanderer {
             setTimeout(() => {
                 this.showRandomCuriosity();
             }, 1000);
+            
+            timer();
         }, 500);
     }
     
     showRandomCuriosity() {
+        // Don't show curiosities if user is actively reading
+        if (this.detectUserActivity() && this.currentContext === 'reading') {
+            return;
+        }
+        
+        // Don't show curiosities in discrete mode
+        if (this.discreteMode) {
+            return;
+        }
+        
         const randomCuriosity = this.curiosities[Math.floor(Math.random() * this.curiosities.length)];
         this.showMessage(randomCuriosity);
     }
@@ -878,6 +1157,7 @@ class MascotWanderer {
     }
     
     showMessage(message) {
+        const timer = this.startTimer('showMessage');
         const speechBubble = document.getElementById('mascot-speech');
         const speechText = document.getElementById('speech-text');
         
@@ -892,6 +1172,7 @@ class MascotWanderer {
         // Hide after 4 seconds
         setTimeout(() => {
             speechBubble.classList.remove('show');
+            timer();
         }, 4000);
     }
     
@@ -908,7 +1189,7 @@ class MascotWanderer {
         const clickMessages = [
             "🐱 PulseCat está aqui para ajudar!",
             "✨ Clique em mim para mais curiosidades!",
-            "🚀 Vamos otimizar seu PC juntos!",
+            "🚀 Vamos otimizar seu Android juntos!",
             "💡 Eu sei de muitas dicas úteis!",
             "🎯 Performance máxima é meu objetivo!"
         ];
@@ -916,10 +1197,7 @@ class MascotWanderer {
         const randomMessage = clickMessages[Math.floor(Math.random() * clickMessages.length)];
         this.showMessage(randomMessage);
         
-        // Trigger toast if available
-        if (typeof showSuccess === 'function') {
-            showSuccess("PulseCat está feliz! 🐱✨", "Mascote");
-        }
+        // PulseCat está feliz!
     }
     
     handleHover() {
@@ -932,6 +1210,21 @@ class MascotWanderer {
         this.mascot.style.transform = 'scale(1)';
     }
     
+    // Memory optimization
+    optimizeMemory() {
+        // Clear old curiosities from memory
+        if (this.curiosities.length > 20) {
+            this.curiosities = this.curiosities.slice(-15);
+        }
+        
+        // Clear old page curiosities
+        Object.keys(this.pageCuriosities).forEach(page => {
+            if (this.pageCuriosities[page].length > 5) {
+                this.pageCuriosities[page] = this.pageCuriosities[page].slice(-3);
+            }
+        });
+    }
+
     destroy() {
         if (this.wanderInterval) {
             clearInterval(this.wanderInterval);
@@ -942,6 +1235,9 @@ class MascotWanderer {
         if (this.mascot) {
             this.mascot.remove();
         }
+        
+        // Clear memory
+        this.optimizeMemory();
     }
 }
 

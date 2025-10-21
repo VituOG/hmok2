@@ -35,9 +35,9 @@ export default function Home() {
 
 			<section className="section">
 				<div className="container grid gap-6 md:grid-cols-3">
-					<Testimonial name="Ana" role="Windows 11 Pro" quote="Meu PC liga muito mais rápido agora!" />
-					<Testimonial name="Carlos" role="Windows 10" quote="Liberei 15 GB em poucos minutos." />
-					<Testimonial name="Rafa" role="Windows 11 Home" quote="O modo turbo ajuda nos jogos." />
+					<Testimonial name="Ana" role="Android 12" quote="Meu celular liga muito mais rápido agora!" />
+					<Testimonial name="Carlos" role="Android 11" quote="Liberei 15 GB em poucos minutos." />
+					<Testimonial name="Rafa" role="Android 13" quote="O modo turbo ajuda nos jogos." />
 				</div>
 			</section>
 

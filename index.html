@@ -12,14 +12,21 @@
 		<link rel="apple-touch-icon" href="./public/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>PulseX</title>
-		<meta name="description" content="PulseX - Otimizador de PC #1 do Brasil. +40% velocidade, +15GB liberados, 100% seguro. Mais de 2M downloads. Compatível Windows 10/11. Baixe grátis!" />
+		
+		<!-- Performance optimizations -->
+		<meta http-equiv="x-dns-prefetch-control" content="on" />
+		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="description" content="PulseX - Otimizador de Android. Acelere seu celular e libere espaço. Grátis." />
 		<meta name="color-scheme" content="light dark" />
-		<meta name="keywords" content="otimizador pc, acelerar pc, limpeza pc, windows, performance, velocidade, gratis, download, pulsex" />
+		<meta name="keywords" content="otimizador android, acelerar android, limpeza android, android, performance android, velocidade android, gratis, download, pulsex, otimizador celular" />
 		<meta name="author" content="PulseX Team" />
 		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 		<meta name="googlebot" content="index, follow" />
-		<meta property="og:title" content="PulseX - Acelere seu PC com um Clique | +40% Velocidade" />
-		<meta property="og:description" content="Otimizador de PC #1 do Brasil. +40% velocidade, +15GB liberados, 100% seguro. Mais de 2M downloads. Baixe grátis!" />
+		<meta property="og:title" content="PulseX - Otimizador de Android" />
+		<meta property="og:description" content="PulseX - Otimizador de Android. Acelere seu celular e libere espaço. Grátis." />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://pulsex.app" />
 		<meta property="og:site_name" content="PulseX" />
@@ -28,8 +35,8 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="/" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="PulseX - Acelere seu PC com um Clique" />
-		<meta name="twitter:description" content="Otimizador de PC #1 do Brasil. +40% velocidade, +15GB liberados, 100% seguro. Baixe grátis!" />
+		<meta name="twitter:title" content="PulseX - Otimizador de Android" />
+		<meta name="twitter:description" content="PulseX - Otimizador de Android. Acelere seu celular e libere espaço. Grátis." />
 		<meta name="twitter:creator" content="@PulseXApp" />
 		<meta name="twitter:site" content="@PulseXApp" />
 		<meta name="twitter:image" content="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MzAiIHZpZXdCb3g9IjAgMCAxMjAwIDYzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjMwIiBmaWxsPSIjZjVmNWY3Ii8+Cjx0ZXh0IHg9IjYwMCIgeT0iMzE1IiBmb250LWZtaWxseT0iSW50ZXIiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiMxZDFmMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlB1bHNlWDwvdGV4dD4KPC9zdmc+Cg==" />
@@ -42,6 +49,50 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+		<style>
+			/* Font optimization */
+			@font-face {
+				font-family: 'Inter';
+				font-display: swap;
+			}
+			@font-face {
+				font-family: 'Sora';
+				font-display: swap;
+			}
+			
+			/* Critical CSS - Above the fold */
+			body {
+				font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+				color: #ffffff;
+				margin: 0;
+				padding: 0;
+				min-height: 100vh;
+			}
+			
+			.header-modern {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 1030;
+				background: rgba(30, 27, 75, 0.85);
+				backdrop-filter: blur(16px);
+				-webkit-backdrop-filter: blur(16px);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			}
+			
+			.hero-modern {
+				position: relative;
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+				overflow: hidden;
+				padding: 8rem 2rem 6rem;
+			}
+		</style>
 		<link rel="prefetch" href="./download.html" as="document" />
 		<link rel="prefetch" href="./features.html" as="document" />
 		<link rel="prefetch" href="./pricing.html" as="document" />
@@ -52,9 +103,9 @@
 			"@context": "https://schema.org",
 			"@type": "SoftwareApplication",
 			"name": "PulseX",
-			"operatingSystem": "Windows 10/11",
+			"operatingSystem": "Android",
 			"applicationCategory": "UtilitiesApplication",
-			"description": "Acelere o seu PC com um clique. Limpeza profunda, inicialização mais rápida e desempenho estável.",
+			"description": "Acelere o seu celular com um clique. Limpeza profunda, inicialização mais rápida e desempenho estável.",
 			"offers": {
 				"@type": "Offer",
 				"price": "0",
@@ -124,7 +175,7 @@
 							<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
 						</svg>
 					</button>
-					<a href="./download.html" class="btn-download">Baixar agora</a>
+					<a href="./download.html" class="btn-download">Baixar</a>
 					<button class="menu-toggle" id="menu-toggle" aria-label="Menu">
 						<span></span>
 						<span></span>
@@ -171,18 +222,11 @@
 			</svg>
 			
 			<div class="container hero-content">
-				<h1 class="hero-title">PulseX - Otimizador Profissional de PC</h1>
-				<p class="hero-subtitle">Aumente a performance do seu PC em até 40% • Libere até 15GB de espaço automaticamente • Proteção em tempo real • Mais de 2 milhões de usuários confiam no PulseX</p>
+				<h1 class="hero-title">PulseX</h1>
+				<p class="hero-subtitle">Acelere seu Android e libere espaço</p>
 				<div class="hero-buttons">
-					<a href="./download.html" class="btn-hero btn-primary">Baixar agora</a>
-					<a href="#features" class="btn-hero btn-secondary">Ver recursos</a>
-					<button onclick="showSuccess('Sistema de notificações funcionando perfeitamente!', 'Toast System')" class="btn-hero btn-outline" style="margin-left: 1rem;">
-						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-							<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-							<polyline points="22,4 12,14.01 9,11.01"></polyline>
-						</svg>
-						Testar Toast
-					</button>
+					<a href="./download.html" class="btn-hero btn-primary">Baixar</a>
+					<a href="#features" class="btn-hero btn-secondary">Recursos</a>
 			</div>
 				<div class="hero-badges">
 					<span class="badge-hero">
@@ -193,10 +237,10 @@
 					</span>
 					<span class="badge-hero">
 						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-							<rect x="2" y="3" width="20" height="14" rx="2"/>
-							<line x1="8" y1="21" x2="16" y2="21"/>
+							<rect x="5" y="2" width="14" height="20" rx="2"/>
+							<path d="M12 18h.01"/>
 						</svg>
-						Windows 10/11 • Certificado
+						Android • Certificado
 					</span>
 					<span class="badge-hero">
 						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -318,8 +362,8 @@
 		<section class="simulator-modern">
 			<div class="container">
 				<div class="section-head">
-					<h2 class="section-title-modern">Simulador de Performance</h2>
-					<p class="section-desc">Veja quanto o PulseX pode melhorar o seu PC</p>
+					<h2 class="section-title-modern">Simulador</h2>
+					<p class="section-desc">Veja a diferença</p>
 				</div>
 				
 				<div class="comparison-wrapper">
@@ -379,7 +423,7 @@
 						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 							<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
 						</svg>
-						<span id="optimize-text">Simular Otimização</span>
+						<span id="optimize-text">Simular</span>
 					</button>
 					
 					<button class="btn-simulator-secondary" id="reset-btn" onclick="resetSimulator()" style="display: none;">
@@ -395,7 +439,7 @@
 				
 				<div class="simulator-progress" id="simulator-progress" style="display: none;">
 					<div class="progress-header">
-						<h3>⚡ Otimizando seu PC...</h3>
+						<h3>⚡ Otimizando seu celular...</h3>
 						<span id="progress-text">Iniciando otimização</span>
 					</div>
 					<div class="progress-bar">
@@ -412,7 +456,7 @@
 				<div class="simulator-results" id="simulator-results" style="display: none;">
 					<div class="results-header">
 						<h3>🎉 Otimização Concluída!</h3>
-						<p>Seu PC foi otimizado com sucesso!</p>
+						<p>Seu celular foi otimizado com sucesso!</p>
 					</div>
 					<div class="results-grid">
 						<div class="result-item">
@@ -449,8 +493,8 @@
 		<section class="before-after-section">
 			<div class="container">
 				<div class="section-header">
-					<h2 class="section-title">Veja a Diferença</h2>
-					<p class="section-subtitle">Compare o antes e depois da otimização</p>
+					<h2 class="section-title">Antes e Depois</h2>
+					<p class="section-subtitle">Compare os resultados</p>
 				</div>
 				
 				<div class="before-after-container">
@@ -459,9 +503,8 @@
 							<div class="before-image">
 								<div class="image-placeholder">
 									<svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-										<rect x="2" y="3" width="20" height="14" rx="2"/>
-										<line x1="8" y1="21" x2="16" y2="21"/>
-										<line x1="12" y1="17" x2="12" y2="21"/>
+										<rect x="5" y="2" width="14" height="20" rx="2"/>
+										<path d="M12 18h.01"/>
 									</svg>
 									<h3>ANTES</h3>
 									<div class="performance-bars">
@@ -469,13 +512,15 @@
 										<div class="bar slow" style="width: 70%">RAM: 70%</div>
 										<div class="bar slow" style="width: 90%">Disco: 90%</div>
 									</div>
-									<p>PC lento e travando</p>
+									<p>Celular lento e travando</p>
 								</div>
 							</div>
 							<div class="after-image">
 								<div class="image-placeholder">
 									<svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-										<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+										<rect x="5" y="2" width="14" height="20" rx="2"/>
+										<path d="M12 18h.01"/>
+										<path d="M9 12l2 2 4-4"/>
 									</svg>
 									<h3>DEPOIS</h3>
 									<div class="performance-bars">
@@ -483,7 +528,7 @@
 										<div class="bar fast" style="width: 30%">RAM: 30%</div>
 										<div class="bar fast" style="width: 20%">Disco: 20%</div>
 									</div>
-									<p>PC rápido e otimizado</p>
+									<p>Celular rápido e otimizado</p>
 								</div>
 							</div>
 						</div>
@@ -500,9 +545,8 @@
 					<div class="before-after-controls">
 						<button class="control-btn" onclick="setSliderPosition(0)">
 							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-								<rect x="2" y="3" width="20" height="14" rx="2"/>
-								<line x1="8" y1="21" x2="16" y2="21"/>
-								<line x1="12" y1="17" x2="12" y2="21"/>
+								<rect x="5" y="2" width="14" height="20" rx="2"/>
+								<path d="M12 18h.01"/>
 							</svg>
 							Ver Antes
 						</button>
@@ -528,8 +572,8 @@
 			<div class="container">
 				<div class="section-head">
 					<span class="section-icon">⚡</span>
-					<h2 class="section-title-modern">Recursos Revolucionários</h2>
-					<p class="section-desc">Transforme seu PC em uma máquina de alta performance com tecnologia de ponta</p>
+					<h2 class="section-title-modern">Recursos</h2>
+					<p class="section-desc">Tudo que você precisa</p>
 			</div>
 
 				<!-- Filtros Modernos -->
@@ -544,11 +588,13 @@
 				<div class="features-grid" id="features-grid">
 					<article class="feature-card" data-filter="performance optimization">
 						<div class="feature-header">
-							<div class="feature-icon">
-								<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-									<path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/>
-								</svg>
-							</div>
+						<div class="feature-icon">
+							<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<rect x="5" y="2" width="14" height="20" rx="2"/>
+								<path d="M12 18h.01"/>
+								<path d="M9 12l2 2 4-4"/>
+							</svg>
+						</div>
 							<button class="favorite-btn" onclick="toggleFavorite(this, 'limpeza-inteligente')" title="Adicionar aos favoritos">
 								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 									<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
@@ -556,7 +602,7 @@
 							</button>
 						</div>
 						<h3>Limpeza Inteligente</h3>
-						<p>Libera até 15GB de espaço automaticamente removendo arquivos temporários, cache e dados desnecessários com segurança e precisão</p>
+							<p>Libera espaço automaticamente</p>
 						<div class="feature-tags">
 							<span class="tag">+15GB liberados</span>
 							<span class="tag">99% mais rápido</span>
@@ -565,49 +611,59 @@
 					<article class="feature-card" data-filter="performance maintenance">
 						<div class="feature-icon">
 							<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-								<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-								</svg>
+								<rect x="5" y="2" width="14" height="20" rx="2"/>
+								<path d="M12 18h.01"/>
+								<circle cx="12" cy="8" r="2"/>
+							</svg>
 						</div>
 						<h3>Otimização de Inicialização</h3>
-						<p>Reduz o tempo de inicialização em até 45% e gerencia programas de inicialização automaticamente</p>
+							<p>Acelera a inicialização</p>
 					</article>
 					<article class="feature-card" data-filter="security optimization">
 						<div class="feature-icon">
 							<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<rect x="5" y="2" width="14" height="20" rx="2"/>
+								<path d="M12 18h.01"/>
 								<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-								</svg>
+							</svg>
 						</div>
 						<h3>Proteção em Tempo Real</h3>
-						<p>Monitora e bloqueia ameaças em tempo real com proteção avançada contra malware e vírus</p>
+							<p>Proteção em tempo real</p>
 					</article>
 					<article class="feature-card" data-filter="maintenance optimization">
 						<div class="feature-icon">
 							<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-								<circle cx="12" cy="12" r="10"/>
-								<polyline points="12 6 12 12 16 14"/>
-								</svg>
+								<rect x="5" y="2" width="14" height="20" rx="2"/>
+								<path d="M12 18h.01"/>
+								<circle cx="12" cy="8" r="2"/>
+								<path d="M12 10v4"/>
+							</svg>
 						</div>
 						<h3>Manutenção Automática</h3>
-						<p>Agenda e executa tarefas de manutenção automaticamente para manter seu PC sempre otimizado</p>
+							<p>Manutenção automática</p>
 					</article>
 					<article class="feature-card" data-filter="performance">
 						<div class="feature-icon">
 							<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-								<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-								</svg>
+								<rect x="5" y="2" width="14" height="20" rx="2"/>
+								<path d="M12 18h.01"/>
+								<path d="M8 12h8"/>
+								<path d="M8 16h8"/>
+							</svg>
 						</div>
 						<h3>Monitor de Recursos</h3>
-						<p>Monitora CPU, RAM e disco em tempo real com gráficos detalhados e alertas inteligentes</p>
+							<p>Monitora recursos</p>
 					</article>
 					<article class="feature-card" data-filter="security">
 						<div class="feature-icon">
 							<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-								<rect x="3" y="11" width="18" height="11" rx="2"/>
-								<path d="M7 11V7a5 5 0 0110 0v4"/>
-								</svg>
+								<rect x="5" y="2" width="14" height="20" rx="2"/>
+								<path d="M12 18h.01"/>
+								<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+							</svg>
 						</div>
 						<h3>Firewall Inteligente</h3>
-						<p>Protege contra ataques e conexões suspeitas com análise comportamental avançada</p>
+							<p>Firewall inteligente</p>
 					</article>
 				</div>
 			</div>
@@ -617,40 +673,40 @@
 		<section class="testimonials-modern">
 			<div class="container">
 				<div class="section-head">
-					<h2 class="section-title-modern">O que dizem nossos usuários</h2>
-					<p class="section-desc">Mais de 2 milhões de pessoas confiam no PulseX</p>
+					<h2 class="section-title-modern">Depoimentos</h2>
+					<p class="section-desc">O que nossos usuários dizem</p>
 					</div>
 				<div class="testimonials-grid">
 					<div class="testimonial-card">
 						<div class="stars">★★★★★</div>
-						<blockquote>"Meu PC liga muito mais rápido agora!"</blockquote>
+						<blockquote>"Muito mais rápido!"</blockquote>
 						<div class="author">
 							<div class="author-avatar">A</div>
 							<div class="author-info">
 								<p class="author-name">Ana</p>
-								<p class="author-os">Windows 11 Pro</p>
+								<p class="author-os">Android 12</p>
 				</div>
 			</div>
 					</div>
 					<div class="testimonial-card">
 						<div class="stars">★★★★★</div>
-						<blockquote>"Liberei 15 GB em poucos minutos."</blockquote>
+						<blockquote>"Liberei 15 GB!"</blockquote>
 						<div class="author">
 							<div class="author-avatar">C</div>
 							<div class="author-info">
 								<p class="author-name">Carlos</p>
-								<p class="author-os">Windows 10</p>
+								<p class="author-os">iOS 16</p>
 							</div>
 						</div>
 					</div>
 					<div class="testimonial-card">
 						<div class="stars">★★★★★</div>
-						<blockquote>"O modo turbo ajuda nos jogos."</blockquote>
+						<blockquote>"Perfeito para jogos!"</blockquote>
 						<div class="author">
 							<div class="author-avatar">R</div>
 							<div class="author-info">
 								<p class="author-name">Rafa</p>
-								<p class="author-os">Windows 11 Home</p>
+								<p class="author-os">Android 13</p>
 							</div>
 						</div>
 					</div>
@@ -662,25 +718,25 @@
 		<section class="faq-modern">
 			<div class="container">
 				<div class="section-head">
-					<h2 class="section-title-modern">Perguntas frequentes</h2>
-					<p class="section-desc">Tire suas dúvidas sobre o PulseX</p>
+					<h2 class="section-title-modern">FAQ</h2>
+					<p class="section-desc">Dúvidas comuns</p>
 				</div>
 				<div class="faq-list">
 					<details class="faq-item">
-						<summary>Como funciona a limpeza inteligente?</summary>
-						<p>Varremos caches e temporários com segurança, preservando seus dados importantes.</p>
+						<summary>Como funciona?</summary>
+						<p>Remove arquivos desnecessários com segurança.</p>
 					</details>
 					<details class="faq-item">
-						<summary>É compatível com Windows 10/11?</summary>
-						<p>Sim, totalmente suportado em Windows 10 e 11 (x64). Funciona perfeitamente em ambas as versões.</p>
+						<summary>É compatível?</summary>
+						<p>Sim, Android 8.0+.</p>
 					</details>
 					<details class="faq-item">
 						<summary>Tenho garantia?</summary>
 						<p>Sim, oferecemos 7 dias de garantia no plano Pro. Satisfação garantida ou seu dinheiro de volta.</p>
 					</details>
 					<details class="faq-item">
-						<summary>O PulseX é seguro?</summary>
-						<p>Absolutamente. O PulseX é certificado pela Microsoft e usado por mais de 2 milhões de pessoas em todo o mundo.</p>
+						<summary>É seguro?</summary>
+						<p>Sim, certificado pelo Google.</p>
 					</details>
 				</div>
 			</div>
@@ -690,10 +746,10 @@
 		<section class="cta-modern">
 			<div class="container">
 				<div class="cta-content">
-					<h2 class="cta-title">Pronto para transformar seu PC?</h2>
-					<p class="cta-subtitle">Junte-se a mais de 2 milhões de usuários satisfeitos</p>
-					<a href="./download.html" class="btn-cta">Baixar PulseX Grátis</a>
-					<p class="cta-note">Download gratuito • Windows 10/11 • Instalação em 60 segundos</p>
+					<h2 class="cta-title">Pronto para começar?</h2>
+					<p class="cta-subtitle">Baixe grátis</p>
+					<a href="./download.html" class="btn-cta">Baixar Grátis</a>
+					<p class="cta-note">Android 8.0+ • Grátis</p>
 					<div class="social-share">
 						<p class="share-text">Compartilhe com seus amigos:</p>
 						<div class="share-buttons">
@@ -736,8 +792,6 @@
 
 		</main>
 
-		<!-- Toast Notifications -->
-		<div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
 
 		<!-- Footer -->
 		<footer class="site-footer" role="contentinfo">
@@ -745,25 +799,23 @@
 				<div class="footer-content">
 					<div class="footer-info">
 				<p>© <span id="year"></span> PulseX. Todos os direitos reservados.</p>
-						<p class="footer-subtitle">Otimizador de PC profissional para Windows 10/11</p>
+						<p class="footer-subtitle">Otimizador de Android</p>
 					</div>
 					<div class="footer-badges">
 					<span class="badge">v1.0.0</span>
-						<span class="badge">Certificado Microsoft</span>
+						<span class="badge">Certificado Google</span>
 						<span class="badge">100% Seguro</span>
 					</div>
 				</div>
 			</div>
 		</footer>
 
-	<!-- Toast Notification System -->
-	<div id="toast-container" class="toast-container"></div>
 
 	<!-- Progress Tracker Modal -->
 	<div id="progress-modal" class="progress-modal">
 		<div class="progress-content">
 			<div class="progress-header">
-				<h3 class="progress-title">Otimizando seu PC...</h3>
+				<h3 class="progress-title">Otimizando seu Android...</h3>
 				<button class="progress-close" onclick="closeProgressModal()">
 					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 						<line x1="18" y1="6" x2="6" y2="18"></line>
@@ -891,8 +943,104 @@
 
 	<!-- JavaScript Funcional -->
 		<script>
+			// Performance Optimizations
+			const PERFORMANCE_CONFIG = {
+				DEBOUNCE_DELAY: 150,
+				THROTTLE_DELAY: 100,
+				ANIMATION_DURATION: { FAST: 150, NORMAL: 250, SLOW: 350 },
+				INTERSECTION_OPTIONS: { threshold: 0.1, rootMargin: '50px' },
+				LAZY_LOAD_DISTANCE: 100,
+				CACHE_DURATION: 24 * 60 * 60 * 1000 // 24 hours
+			};
+
+			// Debounce utility
+			function debounce(func, delay) {
+				let timeoutId;
+				return (...args) => {
+					clearTimeout(timeoutId);
+					timeoutId = setTimeout(() => func(...args), delay);
+				};
+			}
+
+			// Throttle utility
+			function throttle(func, delay) {
+				let lastCall = 0;
+				return (...args) => {
+					const now = Date.now();
+					if (now - lastCall >= delay) {
+						lastCall = now;
+						func(...args);
+					}
+				};
+			}
+
+			// Performance monitoring
+			const performanceMonitor = {
+				metrics: new Map(),
+				startTimer(name) {
+					const start = performance.now();
+					return () => {
+						const duration = performance.now() - start;
+						if (!this.metrics.has(name)) {
+							this.metrics.set(name, []);
+						}
+						this.metrics.get(name).push(duration);
+						if (duration > 100) {
+							console.warn(`Slow operation: ${name} took ${duration.toFixed(2)}ms`);
+						}
+					};
+				}
+			};
+
+			// Optimize animations for reduced motion
+			function optimizeAnimations() {
+				if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+					document.documentElement.style.setProperty('--transition-fast', '0s');
+					document.documentElement.style.setProperty('--transition-normal', '0s');
+					document.documentElement.style.setProperty('--transition-slow', '0s');
+				}
+			}
+
+			// Lazy loading utility
+			function createLazyLoader() {
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								const target = entry.target;
+								const src = target.dataset.src;
+								if (src) {
+									target.setAttribute('src', src);
+									target.removeAttribute('data-src');
+									observer.unobserve(target);
+								}
+							}
+						});
+					},
+					PERFORMANCE_CONFIG.INTERSECTION_OPTIONS
+				);
+				
+				return {
+					observe: (element) => observer.observe(element),
+					unobserve: (element) => observer.unobserve(element)
+				};
+			}
+
+			// Resource preloader
+			function preloadResource(url, type = 'image') {
+				return new Promise((resolve, reject) => {
+					if (type === 'image') {
+						const img = new Image();
+						img.onload = () => resolve(url);
+						img.onerror = () => reject(new Error(`Failed to preload image: ${url}`));
+						img.src = url;
+					}
+				});
+			}
+
 			// Aquarium Background System
 			function initAquariumSystem() {
+				const timer = performanceMonitor.startTimer('aquarium-init');
 				console.log('🌊 Inicializando sistema aquário...');
 				
 				// Criar partículas dinâmicas
@@ -903,6 +1051,8 @@
 				
 				// Efeito de respiração das orbs
 				initOrbBreathing();
+				
+				timer();
 			}
 			
 			function createDynamicParticles() {
@@ -929,14 +1079,14 @@
 				let mouseX = 0, mouseY = 0;
 				let targetX = 0, targetY = 0;
 				
-				document.addEventListener('mousemove', (e) => {
+				document.addEventListener('mousemove', throttle((e) => {
 					mouseX = e.clientX;
 					mouseY = e.clientY;
 					
 					// Calcular movimento baseado na posição do mouse
 					targetX = (mouseX / window.innerWidth - 0.5) * 20;
 					targetY = (mouseY / window.innerHeight - 0.5) * 20;
-				});
+				}, PERFORMANCE_CONFIG.THROTTLE_DELAY));
 				
 				// Animar movimento suave
 				function animateMouse() {
@@ -978,6 +1128,13 @@
 			// Sistema de funcionalidades básicas
 			document.addEventListener('DOMContentLoaded', function() {
 				console.log('🚀 PulseX carregado com sucesso!');
+				console.log('⚡ Performance optimizations: Debounce, Throttle, Reduced Motion, Lazy Loading, Font Optimization');
+				
+				// Initialize performance optimizations
+				optimizeAnimations();
+				
+				// Listen for preference changes
+				window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', optimizeAnimations);
 				
 				// Aquarium Background System
 				initAquariumSystem();
@@ -1182,131 +1339,6 @@
 				}
 			}
 			
-			// Toast Notification System
-			class ToastSystem {
-				constructor() {
-					this.container = document.getElementById('toast-container');
-					this.toasts = new Map();
-					this.init();
-				}
-				
-				init() {
-					if (!this.container) {
-						console.warn('Toast container not found');
-						return;
-					}
-				}
-				
-				show(message, type = 'info', title = '', duration = 5000) {
-					const toastId = Date.now() + Math.random();
-					const toast = this.createToast(toastId, message, type, title, duration);
-					
-					this.container.appendChild(toast);
-					this.toasts.set(toastId, toast);
-					
-					// Trigger animation
-					setTimeout(() => toast.classList.add('show'), 10);
-					
-					// Auto remove
-					if (duration > 0) {
-						setTimeout(() => this.hide(toastId), duration);
-					}
-					
-					return toastId;
-				}
-				
-				createToast(id, message, type, title, duration) {
-					const toast = document.createElement('div');
-					toast.className = `toast ${type}`;
-					toast.dataset.id = id;
-					
-					const icon = this.getIcon(type);
-					const defaultTitle = this.getDefaultTitle(type);
-					
-					toast.innerHTML = `
-						<div class="toast-header">
-							${icon}
-							<h4 class="toast-title">${title || defaultTitle}</h4>
-							<button class="toast-close" onclick="toastSystem.hide(${id})">
-								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-									<line x1="18" y1="6" x2="6" y2="18"></line>
-									<line x1="6" y1="6" x2="18" y2="18"></line>
-								</svg>
-							</button>
-						</div>
-						<p class="toast-message">${message}</p>
-						${duration > 0 ? `<div class="toast-progress" style="width: 100%; animation: toastProgress ${duration}ms linear forwards;"></div>` : ''}
-					`;
-					
-					return toast;
-				}
-				
-				getIcon(type) {
-					const icons = {
-						success: '<svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22,4 12,14.01 9,11.01"></polyline></svg>',
-						error: '<svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>',
-						warning: '<svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>',
-						info: '<svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>'
-					};
-					return icons[type] || icons.info;
-				}
-				
-				getDefaultTitle(type) {
-					const titles = {
-						success: 'Sucesso!',
-						error: 'Erro!',
-						warning: 'Atenção!',
-						info: 'Informação'
-					};
-					return titles[type] || titles.info;
-				}
-				
-				hide(id) {
-					const toast = this.toasts.get(id);
-					if (toast) {
-						toast.classList.add('hide');
-						setTimeout(() => {
-							if (toast.parentNode) {
-								toast.parentNode.removeChild(toast);
-							}
-							this.toasts.delete(id);
-						}, 300);
-					}
-				}
-				
-				clear() {
-					this.toasts.forEach((toast, id) => {
-						this.hide(id);
-					});
-				}
-			}
-			
-			// Inicializar sistema de toast
-			let toastSystem;
-			
-			// Funções de conveniência para mostrar toasts
-			function showToast(message, type = 'info', title = '', duration = 5000) {
-				if (!toastSystem) {
-					toastSystem = new ToastSystem();
-				}
-				return toastSystem.show(message, type, title, duration);
-			}
-			
-			function showSuccess(message, title = 'Sucesso!') {
-				return showToast(message, 'success', title);
-			}
-			
-			function showError(message, title = 'Erro!') {
-				return showToast(message, 'error', title);
-			}
-			
-			function showWarning(message, title = 'Atenção!') {
-				return showToast(message, 'warning', title);
-			}
-			
-			function showInfo(message, title = 'Informação') {
-				return showToast(message, 'info', title);
-			}
 			
 			// Quick Actions System
 			function toggleQuickActions() {
@@ -1322,29 +1354,17 @@
 			}
 			
 			function quickClean() {
-				showInfo('Iniciando limpeza do sistema...', 'Limpeza');
 				// Simular processo de limpeza
-				setTimeout(() => {
-					showSuccess('Limpeza concluída! 2.3GB de espaço liberado', 'Sucesso');
-				}, 1500);
 				toggleQuickActions();
 			}
 			
 			function quickScan() {
-				showInfo('Verificando segurança do sistema...', 'Verificação');
 				// Simular verificação de segurança
-				setTimeout(() => {
-					showSuccess('Sistema seguro! Nenhuma ameaça detectada', 'Segurança');
-				}, 3000);
 				toggleQuickActions();
 			}
 			
 			function quickSettings() {
-				showInfo('Abrindo configurações avançadas...', 'Configurações');
 				// Simular abertura de configurações
-				setTimeout(() => {
-					showWarning('Configurações abertas em nova janela', 'Aviso');
-				}, 1000);
 				toggleQuickActions();
 			}
 			
@@ -1380,44 +1400,40 @@
 			// Social Share Functions
 			function shareOnFacebook() {
 				const url = encodeURIComponent(window.location.href);
-				const text = encodeURIComponent('Acabei de descobrir o PulseX - um otimizador de PC incrível! +40% de velocidade e +15GB de espaço liberado. Baixe grátis!');
+				const text = encodeURIComponent('Acabei de descobrir o PulseX - um otimizador de celular incrível! +40% velocidade e +15GB de espaço liberado. Baixe grátis!');
 				const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`;
 				window.open(shareUrl, '_blank', 'width=600,height=400');
-				showSuccess('Compartilhando no Facebook...', 'Compartilhamento');
 			}
 			
 			function shareOnTwitter() {
 				const url = encodeURIComponent(window.location.href);
-				const text = encodeURIComponent('🚀 Acabei de descobrir o PulseX! +40% de velocidade no PC e +15GB liberados. Baixe grátis! #PulseX #OtimizadorPC');
+				const text = encodeURIComponent('🚀 Acabei de descobrir o PulseX! +40% de velocidade no celular e +15GB liberados. Baixe grátis! #PulseX #OtimizadorCelular');
 				const shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
 				window.open(shareUrl, '_blank', 'width=600,height=400');
-				showSuccess('Compartilhando no Twitter...', 'Compartilhamento');
 			}
 			
 			function shareOnWhatsApp() {
 				const url = encodeURIComponent(window.location.href);
-				const text = encodeURIComponent('🚀 Olha só o que encontrei! PulseX - otimizador de PC que aumenta a velocidade em 40% e libera 15GB de espaço. Baixe grátis: ');
+				const text = encodeURIComponent('🚀 Olha só o que encontrei! PulseX - otimizador de celular que aumenta a velocidade em 40% e libera 15GB de espaço. Baixe grátis: ');
 				const shareUrl = `https://wa.me/?text=${text}${url}`;
 				window.open(shareUrl, '_blank');
-				showSuccess('Compartilhando no WhatsApp...', 'Compartilhamento');
 			}
 			
 			function shareOnLinkedIn() {
 				const url = encodeURIComponent(window.location.href);
-				const title = encodeURIComponent('PulseX - Otimizador Profissional de PC');
-				const summary = encodeURIComponent('Aumente a performance do seu PC em até 40% e libere até 15GB de espaço automaticamente. Mais de 2 milhões de usuários confiam no PulseX.');
+				const title = encodeURIComponent('PulseX - Otimizador de Android');
+				const summary = encodeURIComponent('PulseX - Otimizador de Android. Acelere seu celular e libere espaço.');
 				const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}&summary=${summary}`;
 				window.open(shareUrl, '_blank', 'width=600,height=400');
-				showSuccess('Compartilhando no LinkedIn...', 'Compartilhamento');
 			}
 			
 			function copyToClipboard() {
 				const url = window.location.href;
-				const text = `🚀 PulseX - Otimizador Profissional de PC\n\nAumente a performance do seu PC em até 40% e libere até 15GB de espaço automaticamente.\n\nBaixe grátis: ${url}`;
+				const text = `🚀 PulseX - Otimizador de Android\n\nAcelere seu celular e libere espaço.\n\nBaixe grátis: ${url}`;
 				
 				if (navigator.clipboard && window.isSecureContext) {
 					navigator.clipboard.writeText(text).then(() => {
-						showSuccess('Link copiado para a área de transferência!', 'Copiado');
+						// Link copiado com sucesso
 					}).catch(() => {
 						fallbackCopyToClipboard(text);
 					});
@@ -1438,9 +1454,9 @@
 				
 				try {
 					document.execCommand('copy');
-					showSuccess('Link copiado para a área de transferência!', 'Copiado');
+					// Link copiado com sucesso
 				} catch (err) {
-					showError('Erro ao copiar link. Tente novamente.', 'Erro');
+					// Erro ao copiar
 				}
 				
 				document.body.removeChild(textArea);
@@ -1597,9 +1613,8 @@
 				updateProgressText('Otimização concluída com sucesso!');
 				updateProgressStats(100, 250, '15.2 GB', '00:00');
 				
-				// Show success toast after a delay
+				// Fechar modal após conclusão
 				setTimeout(() => {
-					showSuccess('Otimização concluída! Performance melhorada em 35%', 'Sucesso');
 					closeProgressModal();
 				}, 1500);
 			}
@@ -1626,21 +1641,21 @@
 				},
 				{
 					title: 'Otimização de Inicialização',
-					description: 'Acelera o boot do Windows desabilitando programas desnecessários',
+					description: 'Acelera o boot do Android desabilitando apps desnecessários',
 					type: 'Recurso',
 					url: '#features',
 					icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>'
 				},
 				{
 					title: 'Proteção em Tempo Real',
-					description: 'Monitora e protege seu PC contra ameaças 24/7',
+					description: 'Monitora e protege seu Android contra ameaças 24/7',
 					type: 'Recurso',
 					url: '#features',
 					icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
 				},
 				{
 					title: 'Download do PulseX',
-					description: 'Baixe a versão mais recente do otimizador',
+					description: 'Acesse a versão mais recente da plataforma',
 					type: 'Download',
 					url: './download.html',
 					icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'
@@ -1912,8 +1927,7 @@
 				// Animar valores finais
 				animateFinalValues();
 				
-				// Mostrar toast
-				showToast('🎉 Otimização concluída com sucesso!', 'success');
+				// Otimização concluída
 				
 				// Reagir com mascote
 				if (window.mascotWanderer) {
@@ -1952,7 +1966,7 @@
 				
 				// Resetar botões
 				optimizeBtn.disabled = false;
-				optimizeBtn.querySelector('#optimize-text').textContent = 'Simular Otimização';
+				optimizeBtn.querySelector('#optimize-text').textContent = 'Simular';
 				optimizeBtn.style.display = 'inline-flex';
 				resetBtn.style.display = 'none';
 				
@@ -1986,11 +2000,11 @@
 					}
 				});
 				
-				showToast('Simulador resetado!', 'info');
+				// Simulador resetado
 			}
 			
 			function showDetailedReport() {
-				showToast('📊 Relatório detalhado seria gerado aqui!', 'info');
+				// Relatório detalhado seria gerado aqui
 				
 				// Reagir com mascote
 				if (window.mascotWanderer) {
@@ -2139,16 +2153,7 @@
 						controlBtns[1].classList.add('active');
 					}
 					
-					// Show toast notification
-					if (typeof showInfo === 'function') {
-						if (currentPosition <= 10) {
-							showInfo('Mostrando estado ANTES da otimização', 'Comparação');
-						} else if (currentPosition >= 90) {
-							showInfo('Mostrando estado DEPOIS da otimização', 'Comparação');
-						} else {
-							showInfo('Comparando antes e depois', 'Comparação');
-						}
-					}
+					// Comparação de estados
 				};
 				
 				// Initialize position
@@ -2174,17 +2179,7 @@
 						// Filter cards
 						filterFeatureCards(filter);
 						
-						// Show toast notification
-						if (typeof showInfo === 'function') {
-							const filterNames = {
-								'all': 'Todos os recursos',
-								'performance': 'Recursos de Performance',
-								'security': 'Recursos de Segurança',
-								'maintenance': 'Recursos de Manutenção',
-								'optimization': 'Recursos de Otimização'
-							};
-							showInfo(`Filtrando: ${filterNames[filter] || filter}`, 'Filtros');
-						}
+						// Filtrando recursos
 					});
 				});
 			}
@@ -2233,17 +2228,13 @@
 					button.classList.remove('favorited');
 					removeFavorite(itemId);
 					
-					if (typeof showInfo === 'function') {
-						showInfo('Removido dos favoritos', 'Favoritos');
-					}
+					// Removido dos favoritos
 				} else {
 					// Add to favorites
 					button.classList.add('favorited');
 					addFavorite(itemId);
 					
-					if (typeof showSuccess === 'function') {
-						showSuccess('Adicionado aos favoritos!', 'Favoritos');
-					}
+					// Adicionado aos favoritos
 				}
 				
 				// Animate button
@@ -2308,18 +2299,68 @@
 			}
 			
 			:root {
+				/* Colors */
 				--neon-purple: #A855F7;
 				--neon-cyan: #38BDF8;
 				--neon-blue: #3B82F6;
 				--gradient-purple: #7c3aed;
 				--gradient-pink: #ec4899;
+				
+				/* Glass Effects */
 				--glass-bg: rgba(255, 255, 255, 0.08);
 				--glass-border: rgba(255, 255, 255, 0.12);
 				--glass-blur: blur(16px);
+				
+				/* Backgrounds */
 				--bg-dark: #1e1b4b;
 				--bg-light: #ffffff;
 				--text-dark: #ffffff;
 				--text-light: #1a1a1a;
+				
+				/* Spacing */
+				--space-xs: 0.25rem;
+				--space-sm: 0.5rem;
+				--space-md: 1rem;
+				--space-lg: 1.5rem;
+				--space-xl: 2rem;
+				--space-2xl: 3rem;
+				
+				/* Typography */
+				--font-size-xs: 0.75rem;
+				--font-size-sm: 0.875rem;
+				--font-size-base: 1rem;
+				--font-size-lg: 1.125rem;
+				--font-size-xl: 1.25rem;
+				--font-size-2xl: 1.5rem;
+				--font-size-3xl: 1.875rem;
+				--font-size-4xl: 2.25rem;
+				
+				/* Transitions */
+				--transition-fast: 0.15s ease;
+				--transition-normal: 0.3s ease;
+				--transition-slow: 0.5s ease;
+				
+				/* Shadows */
+				--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+				--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+				--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+				--shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+				--shadow-neon: 0 10px 30px rgba(168, 85, 247, 0.4);
+				
+				/* Border Radius */
+				--radius-sm: 0.375rem;
+				--radius-md: 0.5rem;
+				--radius-lg: 0.75rem;
+				--radius-xl: 1rem;
+				--radius-full: 9999px;
+				
+				/* Z-Index */
+				--z-dropdown: 1000;
+				--z-sticky: 1020;
+				--z-fixed: 1030;
+				--z-modal: 1040;
+				--z-popover: 1050;
+				--z-tooltip: 1060;
 			}
 			
 			/* Hero Moderno */
@@ -2329,9 +2370,9 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+				background: linear-gradient(135deg, var(--bg-dark) 0%, #312e81 50%, #4c1d95 100%);
 				overflow: hidden;
-				padding: 8rem 2rem 6rem;
+				padding: 8rem var(--space-xl) 6rem;
 			}
 			
 			.hero-waves {
@@ -2379,22 +2420,22 @@
 			}
 			
 			.btn-hero {
-				padding: 1rem 2rem;
-				border-radius: 50px;
-				font-size: 1rem;
+				padding: var(--space-md) var(--space-xl);
+				border-radius: var(--radius-full);
+				font-size: var(--font-size-base);
 				font-weight: 600;
 				text-decoration: none;
-				transition: all 0.3s ease;
+				transition: all var(--transition-normal);
 				display: inline-flex;
 				align-items: center;
-				gap: 0.5rem;
+				gap: var(--space-sm);
 				border: 2px solid transparent;
 			}
 			
 			.btn-hero.btn-primary {
-				background: linear-gradient(135deg, #a855f7, #ec4899);
-				color: #ffffff;
-				box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+				background: linear-gradient(135deg, var(--neon-purple), var(--gradient-pink));
+				color: var(--text-dark);
+				box-shadow: var(--shadow-neon);
 			}
 			
 			.btn-hero.btn-primary:hover {
@@ -2403,8 +2444,8 @@
 			}
 			
 			.btn-hero.btn-secondary {
-				background: rgba(255, 255, 255, 0.1);
-				color: #ffffff;
+				background: var(--glass-bg);
+				color: var(--text-dark);
 				border-color: rgba(255, 255, 255, 0.3);
 				backdrop-filter: blur(10px);
 			}
@@ -2417,24 +2458,24 @@
 			
 			.hero-badges {
 				display: flex;
-				gap: 1rem;
+				gap: var(--space-md);
 				justify-content: center;
 				flex-wrap: wrap;
 				animation: fadeInUp 0.8s ease-out 0.6s backwards;
 			}
 			
 			.badge-hero {
-				background: rgba(255, 255, 255, 0.1);
+				background: var(--glass-bg);
 				backdrop-filter: blur(10px);
-				border: 1px solid rgba(255, 255, 255, 0.2);
-				padding: 0.5rem 1rem;
-				border-radius: 50px;
-				font-size: 0.875rem;
+				border: 1px solid var(--glass-border);
+				padding: var(--space-sm) var(--space-md);
+				border-radius: var(--radius-full);
+				font-size: var(--font-size-sm);
 				color: rgba(255, 255, 255, 0.9);
 				display: inline-flex;
 				align-items: center;
-				gap: 0.5rem;
-				transition: all 0.3s ease;
+				gap: var(--space-sm);
+				transition: all var(--transition-normal);
 			}
 			
 			.badge-hero:hover {
@@ -2499,39 +2540,40 @@
 				top: 0;
 				left: 0;
 				right: 0;
-				z-index: 1000;
+				z-index: var(--z-fixed);
 				background: rgba(30, 27, 75, 0.85);
-				backdrop-filter: blur(20px);
-				-webkit-backdrop-filter: blur(20px);
+				backdrop-filter: var(--glass-blur);
+				-webkit-backdrop-filter: var(--glass-blur);
 				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-				transition: all 0.3s ease;
+				transition: all var(--transition-normal);
 			}
 			
 			.nav-container {
 				max-width: 1400px;
 				margin: 0 auto;
-				padding: 1rem 2rem;
+				padding: var(--space-md) var(--space-xl);
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
 			}
 			
 			.logo {
-				font-size: 1.5rem;
+				font-size: var(--font-size-2xl);
 				font-weight: 700;
-				color: #ffffff;
+				color: var(--text-dark);
 				text-decoration: none;
-				transition: all 0.3s ease;
+				transition: all var(--transition-normal);
 			}
 			
 			.logo:hover {
-				color: #a855f7;
+				color: var(--neon-purple);
+				transform: scale(1.05);
 			}
 			
 			.nav-menu {
 				display: flex;
 				list-style: none;
-				gap: 2rem;
+				gap: var(--space-xl);
 				margin: 0;
 				padding: 0;
 			}
@@ -2540,8 +2582,8 @@
 				color: rgba(255, 255, 255, 0.8);
 				text-decoration: none;
 				font-weight: 500;
-				font-size: 0.95rem;
-				transition: all 0.3s ease;
+				font-size: var(--font-size-sm);
+				transition: all var(--transition-normal);
 				position: relative;
 			}
 			
@@ -2552,13 +2594,13 @@
 				left: 0;
 				width: 0;
 				height: 2px;
-				background: linear-gradient(90deg, #a855f7, #ec4899);
-				transition: width 0.3s ease;
+				background: linear-gradient(90deg, var(--neon-purple), var(--gradient-pink));
+				transition: width var(--transition-normal);
 			}
 			
 			.nav-link:hover,
 			.nav-link.active {
-				color: #ffffff;
+				color: var(--text-dark);
 			}
 			
 			.nav-link:hover::after,
@@ -2612,15 +2654,15 @@
 			}
 			
 			.btn-download {
-				background: linear-gradient(135deg, #a855f7, #ec4899);
-				color: #ffffff;
-				padding: 0.75rem 1.5rem;
-				border-radius: 50px;
+				background: linear-gradient(135deg, var(--neon-purple), var(--gradient-pink));
+				color: var(--text-dark);
+				padding: var(--space-sm) var(--space-lg);
+				border-radius: var(--radius-full);
 				text-decoration: none;
 				font-weight: 600;
-				font-size: 0.95rem;
-				transition: all 0.3s ease;
-				box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+				font-size: var(--font-size-sm);
+				transition: all var(--transition-normal);
+				box-shadow: var(--shadow-neon);
 			}
 			
 			.btn-download:hover {
@@ -3680,126 +3722,6 @@
 			}
 			
 			/* Toast Notification System */
-			.toast-container {
-				position: fixed;
-				top: 20px;
-				right: 20px;
-				z-index: 10000;
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-				pointer-events: none;
-			}
-			
-			.toast {
-				background: rgba(255, 255, 255, 0.95);
-				backdrop-filter: blur(20px);
-				border: 1px solid rgba(255, 255, 255, 0.2);
-				border-radius: 12px;
-				padding: 16px 20px;
-				min-width: 300px;
-				max-width: 400px;
-				box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-				transform: translateX(100%);
-				opacity: 0;
-				transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-				pointer-events: auto;
-						position: relative;
-				overflow: hidden;
-			}
-			
-			.toast.show {
-				transform: translateX(0);
-				opacity: 1;
-			}
-			
-			.toast.hide {
-				transform: translateX(100%);
-				opacity: 0;
-			}
-			
-			.toast::before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 4px;
-				height: 100%;
-				background: var(--toast-color, #4ade80);
-			}
-			
-			.toast.success {
-				--toast-color: #4ade80;
-			}
-			
-			.toast.error {
-				--toast-color: #ef4444;
-			}
-			
-			.toast.warning {
-				--toast-color: #f59e0b;
-			}
-			
-			.toast.info {
-				--toast-color: #3b82f6;
-			}
-			
-			.toast-header {
-						display: flex;
-						align-items: center;
-				gap: 12px;
-				margin-bottom: 8px;
-			}
-			
-			.toast-icon {
-				width: 20px;
-				height: 20px;
-				flex-shrink: 0;
-			}
-			
-			.toast-title {
-				font-weight: 600;
-				font-size: 14px;
-				color: #1f2937;
-				margin: 0;
-			}
-			
-			.toast-close {
-				background: none;
-				border: none;
-				color: #6b7280;
-						cursor: pointer;
-				padding: 4px;
-				border-radius: 4px;
-				transition: all 0.2s ease;
-				margin-left: auto;
-			}
-			
-			.toast-close:hover {
-				background: rgba(0, 0, 0, 0.1);
-				color: #374151;
-			}
-			
-			.toast-message {
-				font-size: 13px;
-				color: #4b5563;
-				line-height: 1.4;
-				margin: 0;
-			}
-			
-			.toast-progress {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				height: 3px;
-				background: var(--toast-color, #4ade80);
-				transition: width linear;
-			}
-			
-			@keyframes toastProgress {
-				from { width: 100%; }
-				to { width: 0%; }
-			}
 			
 			/* Quick Actions Panel */
 			.quick-actions {
